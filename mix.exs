@@ -1,7 +1,7 @@
 defmodule M2X.Mixfile do
   use Mix.Project
 
-  def version, do: "0.0.1"
+  def version, do: "0.0.1" # TODO: consolidate with VERSION in m2x.erl
 
   def project do
     [ app:         :m2x_erlang,
