@@ -15,7 +15,7 @@ defmodule M2XTest do
   end
 
   test "client get /status" do
+    IO.inspect client.({:raw, :get, "/status"})
     IO.inspect client.({:get, "/status"})
-    IO.inspect client.({:get, "/status", [{"foo", "bar"}]})
   end
 end

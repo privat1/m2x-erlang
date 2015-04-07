@@ -36,39 +36,55 @@ create(ApiKey, ApiBase, ApiVersion) ->
 
 process_args(Args) ->
   case Args of
-    {Method, Path} -> {Method, Path, null, []};
-    {Method, Path, Params} -> {Method, Path, Params, []};
-    {Method, Path, Params, Headers} -> {Method, Path, Params, Headers}
+    {raw, Method, Path}                  -> {Method, Path, null, [], true};
+    {raw, Method, Path, Params}          -> {Method, Path, Params, [], true};
+    {raw, Method, Path, Params, Headers} -> {Method, Path, Params, Headers, true};
+    {Method, Path}                       -> {Method, Path, null, [], false};
+    {Method, Path, Params}               -> {Method, Path, Params, [], false};
+    {Method, Path, Params, Headers}      -> {Method, Path, Params, Headers, false}
   end.
 
 %% Make an API request with the given REST method, path and parameters
-request({ApiKey, ApiBase, ApiVersion}, {Method, Path, Params, Headers}) ->
+request({ApiKey, ApiBase, ApiVersion}, {Method, Path, Params, Headers, UseRaw}) ->
   Url              = make_url(ApiBase, ApiVersion, Path),
   {Body, Headers2} = make_body(Params, Headers),
   HeaderList       = Headers2 ++ [
     {<<"X-M2X-KEY">>, ApiKey},
     {<<"User-Agent">>, user_agent()}
   ],
-  OptionList      = [], % TODO: use SSL
-  make_response(hackney:request(Method, Url, HeaderList, Body, OptionList)).
+  OptionList       = [], % TODO: use SSL
+  make_response(hackney:request(Method, Url, HeaderList, Body, OptionList), UseRaw).
 
 %% Convert the given hackney response into an m2x-style response
-make_response({ok, Status, Headers, BodyRef}) ->
-  {ok, Body}  = hackney:body(BodyRef),
-  Json        = case proplists:get_value(<<"Content-Type">>, Headers) of
-                  <<"application/json">> -> jsx:decode(Body);
-                  _                      -> null
-                end,
-  [ { raw,     Body },
-    { json,    Json },
-    { status,  Status },
-    { headers, Headers } ].
+make_response({ok, Status, Headers, BodyRef}, UseRaw) ->
+  {ok, Body} = hackney:body(BodyRef),
+  Json = case proplists:get_value(<<"Content-Type">>, Headers) of
+           <<"application/json">> -> jsx:decode(Body);
+           _                      -> null
+         end,
+  IsOk = case Status div 100 of
+           2 -> ok;
+           4 -> client_error;
+           5 -> server_error;
+           _ -> other
+         end,
+  if
+    UseRaw -> {IsOk, [ { raw,     Body },
+                       { json,    Json },
+                       { status,  Status },
+                       { headers, Headers } ]};
+    true   -> {IsOk, Status, Json}
+  end.
 
 %% Construct the URL to use in the HTTP request
 make_url(ApiBase, ApiVersion, Path) ->
-  SlashPath = case Path of
-    <<"/", _/binary>> -> Path;
-    _                 -> <<"/", Path>>
+  BinaryPath = case Path of
+    <<_/binary>> -> Path;
+    _            -> list_to_binary(Path)
+  end,
+  SlashPath = case BinaryPath of
+    <<"/", _/binary>> -> BinaryPath;
+    _                 -> <<"/", BinaryPath>>
   end,
   ApiVersionString = atom_to_binary(ApiVersion, utf8),
   <<ApiBase/binary, "/", ApiVersionString/binary, SlashPath/binary>>.
