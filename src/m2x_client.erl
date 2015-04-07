@@ -10,7 +10,6 @@
 -define(DEFAULT_API_VERSION, v2).
 
 % Return the user agent string (as a binary)
-% user_agent() -> <<"M2X-Erlang/":utf8, m2x:version():utf8, " erlang/":utf8>>.
 user_agent() ->
   LibVersion = m2x:version(),
   ErlVersion = list_to_binary(erlang:system_info(otp_release)),
