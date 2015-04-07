@@ -30,13 +30,19 @@ create(ApiKey) -> create(ApiKey, ?DEFAULT_API_BASE, ?DEFAULT_API_VERSION).
 create(ApiKey, ApiBase) -> create(ApiKey, ApiBase, ?DEFAULT_API_VERSION).
 create(ApiKey, ApiBase, ApiVersion) ->
   hackney:start(),
-  fun(Method, Path, Params) ->
-    request({ApiKey, ApiBase, ApiVersion},
-      Method, Path, Params, [])
+  fun(Args) ->
+    request({ApiKey, ApiBase, ApiVersion}, process_args(Args))
+  end.
+
+process_args(Args) ->
+  case Args of
+    {Method, Path} -> {Method, Path, null, []};
+    {Method, Path, Params} -> {Method, Path, Params, []};
+    {Method, Path, Params, Headers} -> {Method, Path, Params, Headers}
   end.
 
 %% Make an API request with the given REST method, path and parameters
-request({ApiKey, ApiBase, ApiVersion}, Method, Path, Params, Headers) ->
+request({ApiKey, ApiBase, ApiVersion}, {Method, Path, Params, Headers}) ->
   Url              = make_url(ApiBase, ApiVersion, Path),
   {Body, Headers2} = make_body(Params, Headers),
   HeaderList       = Headers2 ++ [
