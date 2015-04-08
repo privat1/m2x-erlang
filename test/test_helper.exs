@@ -32,6 +32,12 @@ defmodule MockEngine do
     :v2
   end
 
+  def check_normal(request, block) when is_function(block) do
+    :ok           = verify(request, {222, [{"foo", "foo_value"}]}, block)
+    :client_error = verify(request, {444, [{"bar", "bar_value"}]}, block)
+    :server_error = verify(request, {555, [{"baz", "baz_value"}]}, block)
+  end
+
   def verify(request, response, block) when is_function(block) do
     subject = client(request, response)
     {is_ok, status, json} = block.(subject)
