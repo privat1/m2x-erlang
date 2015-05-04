@@ -1,4 +1,4 @@
-defmodule Test_m2x_device_trigger do
+defmodule Test_m2x_trigger do
   use ExUnit.Case
 
   device  = "00112233445566778899aabbccddeeff"
@@ -15,8 +15,8 @@ defmodule Test_m2x_device_trigger do
       MockEngine.check_normal(
         {unquote(req_method), unquote(req_path), unquote(req_params)},
         case unquote(func_params) do
-          :null -> &(apply(:m2x_device_trigger, unquote(func), [&1, unquote(device), unquote(trigger)]))
-          _     -> &(apply(:m2x_device_trigger, unquote(func), [&1, unquote(device), unquote(trigger), unquote(func_params)]))
+          :null -> &(apply(:m2x_trigger, unquote(func), [&1, unquote(device), unquote(trigger)]))
+          _     -> &(apply(:m2x_trigger, unquote(func), [&1, unquote(device), unquote(trigger), unquote(func_params)]))
         end
       )
     end

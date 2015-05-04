@@ -1,5 +1,5 @@
 
--module(m2x_device_trigger).
+-module(m2x_trigger).
 
 %% API
 -export([view/3           ]).
