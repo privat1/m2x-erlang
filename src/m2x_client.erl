@@ -29,7 +29,7 @@ user_agent() ->
 create(ApiKey) -> create(ApiKey, ?DEFAULT_API_BASE, ?DEFAULT_API_VERSION).
 create(ApiKey, ApiBase) -> create(ApiKey, ApiBase, ?DEFAULT_API_VERSION).
 create(ApiKey, ApiBase, ApiVersion) -> create(ApiKey, ApiBase, ApiVersion, hackney).
-create(ApiKey, ApiBase, ApiVersion, HttpEngine) ->
+create(ApiKey, ApiBase, ApiVersion, HttpEngine) when is_binary(ApiKey) andalso is_binary(ApiBase) andalso is_atom(ApiVersion) ->
   HttpEngine:start(),
   fun(Args) ->
     request({ApiKey, ApiBase, ApiVersion, HttpEngine}, process_args(Args))
