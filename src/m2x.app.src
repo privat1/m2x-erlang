@@ -1,0 +1,18 @@
+
+{application, m2x, [
+  {vsn, "0.0.1"},
+  {modules, [
+    m2x,
+    m2x_client,
+    m2x_device,
+    m2x_stream,
+    m2x_trigger,
+    m2x_distribution,
+    m2x_distribution_stream,
+    m2x_distribution_trigger,
+    m2x_key
+  ]},
+  {registered, []},
+  {applications, [kernel, stdlib]},
+  {env, []}
+]}.
