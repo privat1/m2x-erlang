@@ -6,7 +6,7 @@
 -export([user_agent/0]).
 
 %% Macros
--define(DEFAULT_API_BASE, <<"http://api-m2x.att.com">>). % TODO: use SSL
+-define(DEFAULT_API_BASE, <<"https://api-m2x.att.com">>).
 -define(DEFAULT_API_VERSION, v2).
 
 % Return the user agent string (as a binary)
@@ -53,7 +53,7 @@ request({ApiKey, ApiBase, ApiVersion, HttpEngine}, {Method, Path, Params, Header
     {<<"X-M2X-KEY">>, ApiKey},
     {<<"User-Agent">>, user_agent()}
   ],
-  OptionList       = [], % TODO: use SSL
+  OptionList       = [{cacertfile, filename:dirname(?FILE) ++ "/cacert.pem"}],
   make_response(HttpEngine:request(Method, Url, HeaderList, Body, OptionList), HttpEngine, UseRaw).
 
 %% Convert the given HttpEngine response into an m2x-style response

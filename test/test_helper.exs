@@ -25,7 +25,7 @@ defmodule MockEngine do
   end
 
   def api_base do
-    "http://api-m2x.att.com" # TODO: use SSL
+    "https://api-m2x.att.com"
   end
 
   def api_version do
