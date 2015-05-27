@@ -12,6 +12,26 @@ Refer to the [Glossary of Terms](https://m2x.att.com/developer/documentation/glo
 2. Create your first [Device](https://m2x.att.com/devices) and copy its _Device ID_.
 3. Review the [M2X API Documentation](https://m2x.att.com/developer/documentation/overview).
 
+## Getting an Interactive M2X-Erlang Shell
+
+To get an interactive shell, you'll need to install the [Erlang/OTP](https://github.com/erlang/otp/wiki/Installation) virtual machine and the [Rebar](https://github.com/rebar/rebar) build system and dependency manager, either through your system's package manager or by builting from source.
+
+You'll also need to clone this repository using Git.
+```bash
+git clone https://github.com/attm2x/m2x-erlang.git
+cd m2x-erlang
+```
+
+From the repository directory, use `rebar` to fetch dependencies and compile the library.
+```bash
+rebar get-deps && rebar compile
+```
+
+Once the library and its dependencies are built, you can use `rebar` to get an interactive shell and follow along with the usage examples.
+```bash
+rebar shell
+```
+
 ## Usage
 
 In order to communicate with the M2X API, you first need to create a client function containing your API key.
