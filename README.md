@@ -14,7 +14,7 @@ Refer to the [Glossary of Terms](https://m2x.att.com/developer/documentation/glo
 
 ## Getting an Interactive M2X-Erlang Shell
 
-To get an interactive shell, you'll need to install the [Erlang/OTP](https://github.com/erlang/otp/wiki/Installation) virtual machine and the [Rebar](https://github.com/rebar/rebar) build system and dependency manager, either through your system's package manager or by builting from source.
+To get an interactive shell, you'll need to install the [Erlang/OTP](https://github.com/erlang/otp/wiki/Installation) virtual machine and the [Rebar](https://github.com/rebar/rebar) build system and dependency manager, either through your system's package manager or by building from the source.
 
 You'll also need to clone this repository using Git.
 ```bash
