@@ -58,55 +58,16 @@ You can also add parameters to be sent in the request body as JSON encoded from 
                 <<"The specified resource does not exist">>}]}
 ```
 
-To avoid using API endpoints directly, the `Client` function can instead be passed as the first argument to one of the many convenience wrappers provided by this library. The following are examples of some of the available wrapper functions. Follow the links to the source files to see all of the available wrapper functions with links to the relevant API documentation.
+To avoid using API endpoints directly, the `Client` function can instead be passed as the first argument to one of the many convenience wrappers provided by this library. Follow the links to the documentation for the following modules to see all of the available wrapper functions with links to the relevant API documentation.
 
-- **m2x** - [Module source](src/m2x.erl) - [API documentation](https://m2x.att.com/developer/documentation/v2/overview)
-```erlang
-m2x:devices(Client).
-m2x:create_device(Client, Params).
-```
-
-- **m2x_key** - [Module source](src/m2x_key.erl) - [API documentation](https://m2x.att.com/developer/documentation/v2/keys)
-```erlang
-m2x_key:view(Client, <<"KEY-ID">>).
-m2x_key:update(Client, <<"KEY-ID">>, Params).
-```
-
-- **m2x_device** - [Module source](src/m2x_device.erl) - [API documentation](https://m2x.att.com/developer/documentation/v2/device)
-```erlang
-m2x_device:view(Client, <<"DEVICE-ID">>).
-m2x_device:update(Client, <<"DEVICE-ID">>, Params).
-```
-
-- **m2x_stream** - [Module source](src/m2x_stream.erl) - [API documentation](https://m2x.att.com/developer/documentation/v2/device)
-```erlang
-m2x_stream:view(Client, <<"DEVICE-ID">>, <<"STREAM-NAME">>).
-m2x_stream:update(Client, <<"DEVICE-ID">>, <<"STREAM-NAME">>, Params).
-```
-
-- **m2x_trigger** - [Module source](src/m2x_trigger.erl) - [API documentation](https://m2x.att.com/developer/documentation/v2/device)
-```erlang
-m2x_trigger:view(Client, <<"DEVICE-ID">>, <<"TRIGGER-ID">>).
-m2x_trigger:update(Client, <<"DEVICE-ID">>, <<"TRIGGER-ID">>, Params).
-```
-
-- **m2x_distribution** - [Module source](src/m2x_distribution.erl) - [API documentation](https://m2x.att.com/developer/documentation/v2/distribution)
-```erlang
-m2x_distribution:view(Client, <<"DISTRIBUTION-ID">>).
-m2x_distribution:update(Client, <<"DISTRIBUTION-ID">>, Params).
-```
-
-- **m2x_distribution_stream** - [Module source](src/m2x_distribution_stream.erl) - [API documentation](https://m2x.att.com/developer/documentation/v2/distribution)
-```erlang
-m2x_distribution_stream:view(Client, <<"DISTRIBUTION-ID">>, <<"STREAM-NAME">>).
-m2x_distribution_stream:update(Client, <<"DISTRIBUTION-ID">>, <<"STREAM-NAME">>, Params).
-```
-
-- **m2x_distribution_trigger** - [Module source](src/m2x_distribution_trigger.erl) - [API documentation](https://m2x.att.com/developer/documentation/v2/distribution)
-```erlang
-m2x_distribution_trigger:view(Client, <<"DISTRIBUTION-ID">>, <<"TRIGGER-ID">>).
-m2x_distribution_trigger:update(Client, <<"DISTRIBUTION-ID">>, <<"TRIGGER-ID">>, Params).
-```
+- **m2x** - [Module documentation](doc/m2x.md) - [Module source](src/m2x.erl) - [Web API documentation](https://m2x.att.com/developer/documentation/v2/overview)
+- **m2x_key** - [Module documentation](doc/m2x_key.md) - [Module source](src/m2x_key.erl) - [Web API documentation](https://m2x.att.com/developer/documentation/v2/keys)
+- **m2x_device** - [Module documentation](doc/m2x_device.md) - [Module source](src/m2x_device.erl) - [Web API documentation](https://m2x.att.com/developer/documentation/v2/device)
+- **m2x_stream** - [Module documentation](doc/m2x_stream.md) - [Module source](src/m2x_stream.erl) - [Web API documentation](https://m2x.att.com/developer/documentation/v2/device)
+- **m2x_trigger** - [Module documentation](doc/m2x_trigger.md) - [Module source](src/m2x_trigger.erl) - [Web API documentation](https://m2x.att.com/developer/documentation/v2/device)
+- **m2x_distribution** - [Module documentation](doc/m2x_distribution.md) - [Module source](src/m2x_distribution.erl) - [Web API documentation](https://m2x.att.com/developer/documentation/v2/distribution)
+- **m2x_distribution_stream** - [Module documentation](doc/m2x_distribution_stream.md) - [Module source](src/m2x_distribution_stream.erl) - [Web API documentation](https://m2x.att.com/developer/documentation/v2/distribution)
+- **m2x_distribution_trigger** - [Module documentation](doc/m2x_distribution_trigger.md) - [Module source](src/m2x_distribution_trigger.erl) - [Web API documentation](https://m2x.att.com/developer/documentation/v2/distribution)
 
 ## Versioning
 
