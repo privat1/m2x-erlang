@@ -30,10 +30,10 @@ while read -r line; do
     current_url="${BASH_REMATCH[1]}"
   elif [[ $line =~ $func_pattern ]]; then
     if [[ -z $current_names ]]; then
-      current_funcs="${module_name}:${BASH_REMATCH[1]}"
+      current_funcs="${BASH_REMATCH[1]}"
       current_names="${BASH_REMATCH[2]}"
     else
-      current_funcs="${current_funcs}"$'\n'"${module_name}:${BASH_REMATCH[1]}"
+      current_funcs="${current_funcs}"$'\n'"${BASH_REMATCH[1]}"
       current_names="${current_names} ${BASH_REMATCH[2]}"
     fi
   elif [[ $line =~ $empty_pattern ]]; then
@@ -58,7 +58,7 @@ while read -r line; do
       echo '```erlang'
 
       while read -r func; do
-        echo $func
+        echo "${module_name}:${func}."
       done <<< "$current_funcs"
       echo '```'
     fi
