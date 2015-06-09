@@ -56,7 +56,6 @@ while read -r line; do
       echo "> [${current_url}](${current_url})"
       echo
       echo '```erlang'
-
       while read -r func; do
         echo "${module_name}:${func}."
       done <<< "$current_funcs"
