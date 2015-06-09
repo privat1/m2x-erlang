@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# This script will generate the documentation markdown files for each module.
+# It should be run from the root directory of the project, as in:
+# $ scripts/generate_doc
+
+mkdir -p doc
+
+for filename in $(ls src | grep erl); do
+  if [[ $filename != "m2x_client.erl" ]]; then
+    doc_filename=`echo $filename | sed s/\.erl/\.md/`
+    echo "generating doc/${doc_filename}..."
+    bash scripts/single_module_doc.sh "${filename}" > "doc/${doc_filename}"
+  fi
+done
