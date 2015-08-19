@@ -62,10 +62,10 @@ collections(Client)                 -> Client({get, <<"/collections">>}).
 create_collection(Client, Params)   -> Client({post, <<"/collections">>, Params}).
 
 %% @doc Retrieve list of keys associated with the specified account.
-%% https://m2x.att.com/developer/documentation/v2/key#List-Search-Keys
+%% https://m2x.att.com/developer/documentation/v2/keys#List-Search-Keys
 keys(Client)                        -> Client({get, <<"/keys">>}).
 keys(Client, Params)                -> Client({get, <<"/keys">>, Params}).
 
 %% @doc Create a new key associated with the specified account.
-%% https://m2x.att.com/developer/documentation/v2/key#Create-Key
+%% https://m2x.att.com/developer/documentation/v2/keys#Create-Key
 create_key(Client, Params)          -> Client({post, <<"/keys">>, Params}).

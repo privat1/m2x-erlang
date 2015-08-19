@@ -68,7 +68,7 @@ m2x:create_collection(Client, Params).
 
 ### keys
 Retrieve list of keys associated with the specified account.
-> [https://m2x.att.com/developer/documentation/v2/key#List-Search-Keys](https://m2x.att.com/developer/documentation/v2/key#List-Search-Keys)
+> [https://m2x.att.com/developer/documentation/v2/keys#List-Search-Keys](https://m2x.att.com/developer/documentation/v2/keys#List-Search-Keys)
 
 ```erlang
 m2x:keys(Client).
@@ -77,7 +77,7 @@ m2x:keys(Client, Params).
 
 ### create_key
 Create a new key associated with the specified account.
-> [https://m2x.att.com/developer/documentation/v2/key#Create-Key](https://m2x.att.com/developer/documentation/v2/key#Create-Key)
+> [https://m2x.att.com/developer/documentation/v2/keys#Create-Key](https://m2x.att.com/developer/documentation/v2/keys#Create-Key)
 
 ```erlang
 m2x:create_key(Client, Params).
