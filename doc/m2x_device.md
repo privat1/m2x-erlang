@@ -65,9 +65,25 @@ m2x_device:values(Client, <<"DEVICE-ID">>).
 m2x_device:values(Client, <<"DEVICE-ID">>, Params).
 ```
 
+### values_search
+Search values from all data streams associated with a specific device.
+> [https://m2x.att.com/developer/documentation/v2/device#Search-Values-from-all-Data-Streams-of-a-Device](https://m2x.att.com/developer/documentation/v2/device#Search-Values-from-all-Data-Streams-of-a-Device)
+
+```erlang
+m2x_device:values_search(Client, <<"DEVICE-ID">>, Params).
+```
+
+### post_update
+Post single values to multiple streams.
+> [https://m2x.att.com/developer/documentation/v2/device#Post-Device-Updates--Single-Values-to-Multiple-Streams-](https://m2x.att.com/developer/documentation/v2/device#Post-Device-Updates--Single-Values-to-Multiple-Streams-)
+
+```erlang
+m2x_device:post_update(Client, <<"DEVICE-ID">>, Params).
+```
+
 ### post_updates
-Post values to multiple streams at once.
-> [https://m2x.att.com/developer/documentation/v2/device#Post-Device-Updates-Multiple-Values-to-Multiple-Streams](https://m2x.att.com/developer/documentation/v2/device#Post-Device-Updates-Multiple-Values-to-Multiple-Streams)
+Post multiple values to multiple streams.
+> [https://m2x.att.com/developer/documentation/v2/device#Post-Device-Updates--Multiple-Values-to-Multiple-Streams-](https://m2x.att.com/developer/documentation/v2/device#Post-Device-Updates--Multiple-Values-to-Multiple-Streams-)
 
 ```erlang
 m2x_device:post_updates(Client, <<"DEVICE-ID">>, Params).
