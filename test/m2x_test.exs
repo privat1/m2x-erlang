@@ -12,6 +12,8 @@ defmodule Test_m2x do
     { :create_device,       "/2", params, :post, "/devices",         params },
     { :distributions,       "/1", :null,  :get,  "/distributions",   :null  },
     { :create_distribution, "/2", params, :post, "/distributions",   params },
+    { :collections,         "/1", :null,  :get,  "/collections",     :null  },
+    { :create_collection,   "/2", params, :post, "/collections",     params },
     { :keys,                "/1", :null,  :get,  "/keys",            :null  },
     { :keys,                "/2", params, :get,  "/keys",            params },
     { :create_key,          "/2", params, :post, "/keys",            params },

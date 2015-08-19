@@ -13,6 +13,8 @@
 -export([                   create_device/2      ]).
 -export([distributions/1                         ]).
 -export([                   create_distribution/2]).
+-export([collections/1                           ]).
+-export([                   create_collection/2  ]).
 -export([keys/1,            keys/2               ]).
 -export([                   create_key/2         ]).
 
@@ -50,6 +52,14 @@ distributions(Client)               -> Client({get, <<"/distributions">>}).
 %% @doc Create a new device distribution.
 %% https://m2x.att.com/developer/documentation/v2/distribution#Create-Distribution
 create_distribution(Client, Params) -> Client({post, <<"/distributions">>, Params}).
+
+%% @doc Retrieve list of device collections accessible by the authenticated API key.
+%% https://m2x.att.com/developer/documentation/v2/collections#List-Collections
+collections(Client)                 -> Client({get, <<"/collections">>}).
+
+%% @doc Create a new device collection.
+%% https://m2x.att.com/developer/documentation/v2/collections#Create-Collection
+create_collection(Client, Params)   -> Client({post, <<"/collections">>, Params}).
 
 %% @doc Retrieve list of keys associated with the specified account.
 %% https://m2x.att.com/developer/documentation/v2/key#List-Search-Keys

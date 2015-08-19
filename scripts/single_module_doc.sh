@@ -46,6 +46,7 @@ while read -r line; do
       # Substitute variable names for binary strings hints where possible
       current_funcs=$(echo "${current_funcs}" | sed 's/Device/<<"DEVICE-ID">>/')
       current_funcs=$(echo "${current_funcs}" | sed 's/Dist/<<"DISTRIBUTION-ID">>/')
+      current_funcs=$(echo "${current_funcs}" | sed 's/Coll/<<"COLLECTION-ID">>/')
       current_funcs=$(echo "${current_funcs}" | sed 's/Key/<<"KEY-ID">>/')
       current_funcs=$(echo "${current_funcs}" | sed 's/Stream/<<"STREAM-NAME">>/')
 

@@ -50,6 +50,22 @@ Create a new device distribution.
 m2x:create_distribution(Client, Params).
 ```
 
+### collections
+Retrieve list of device collections accessible by the authenticated API key.
+> [https://m2x.att.com/developer/documentation/v2/collections#List-Collections](https://m2x.att.com/developer/documentation/v2/collections#List-Collections)
+
+```erlang
+m2x:collections(Client).
+```
+
+### create_collection
+Create a new device collection.
+> [https://m2x.att.com/developer/documentation/v2/collections#Create-Collection](https://m2x.att.com/developer/documentation/v2/collections#Create-Collection)
+
+```erlang
+m2x:create_collection(Client, Params).
+```
+
 ### keys
 Retrieve list of keys associated with the specified account.
 > [https://m2x.att.com/developer/documentation/v2/key#List-Search-Keys](https://m2x.att.com/developer/documentation/v2/key#List-Search-Keys)

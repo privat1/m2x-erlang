@@ -8,6 +8,7 @@
     m2x_stream,
     m2x_distribution,
     m2x_distribution_stream,
+    m2x_collection,
     m2x_key
   ]},
   {registered, []},
