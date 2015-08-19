@@ -72,19 +72,3 @@ Post values to multiple streams at once.
 ```erlang
 m2x_device:post_updates(Client, <<"DEVICE-ID">>, Params).
 ```
-
-### triggers
-Retrieve list of triggers associated with the specified device.
-> [https://m2x.att.com/developer/documentation/v2/device#List-Triggers](https://m2x.att.com/developer/documentation/v2/device#List-Triggers)
-
-```erlang
-m2x_device:triggers(Client, <<"DEVICE-ID">>).
-```
-
-### create_trigger
-Create a new trigger associated with the specified device.
-> [https://m2x.att.com/developer/documentation/v2/device#Create-Trigger](https://m2x.att.com/developer/documentation/v2/device#Create-Trigger)
-
-```erlang
-m2x_device:create_trigger(Client, <<"DEVICE-ID">>, Params).
-```

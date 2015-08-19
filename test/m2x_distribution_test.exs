@@ -11,8 +11,6 @@ defmodule Test_m2x_distribution do
     { :devices,        "/2", :null,  :get,    "/distributions/"<>distribution<>"/devices",  :null  },
     { :create_device,  "/3", params, :post,   "/distributions/"<>distribution<>"/devices",  params },
     { :streams,        "/2", :null,  :get,    "/distributions/"<>distribution<>"/streams",  :null  },
-    { :triggers,       "/2", :null,  :get,    "/distributions/"<>distribution<>"/triggers", :null  },
-    { :create_trigger, "/3", params, :post,   "/distributions/"<>distribution<>"/triggers", params },
   ] do
     test Atom.to_string(func) <> arity do
       MockEngine.check_normal(

@@ -47,19 +47,3 @@ Retrieve list of data streams associated with the specified distribution.
 ```erlang
 m2x_distribution:streams(Client, <<"DISTRIBUTION-ID">>).
 ```
-
-### triggers
-Retrieve list of triggers associated with the specified distribution.
-> [https://m2x.att.com/developer/documentation/v2/distribution#List-Triggers](https://m2x.att.com/developer/documentation/v2/distribution#List-Triggers)
-
-```erlang
-m2x_distribution:triggers(Client, <<"DISTRIBUTION-ID">>).
-```
-
-### create_trigger
-Create a new trigger associated with the specified distribution.
-> [https://m2x.att.com/developer/documentation/v2/distribution#Create-Trigger](https://m2x.att.com/developer/documentation/v2/distribution#Create-Trigger)
-
-```erlang
-m2x_distribution:create_trigger(Client, <<"DISTRIBUTION-ID">>, Params).
-```

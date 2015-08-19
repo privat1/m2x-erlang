@@ -11,8 +11,6 @@
 -export([streams/2                   ]).
 -export([values/2,  values/3         ]).
 -export([           post_updates/3   ]).
--export([triggers/2                  ]).
--export([           create_trigger/3 ]).
 
 %% @doc Get details of an existing device.
 %% https://m2x.att.com/developer/documentation/v2/device#View-Device-Details
@@ -50,11 +48,3 @@ values(Client, Device, Params)          -> Client({get, <<"/devices/", Device/bi
 %% @doc Post values to multiple streams at once.
 %% https://m2x.att.com/developer/documentation/v2/device#Post-Device-Updates-Multiple-Values-to-Multiple-Streams
 post_updates(Client, Device, Params)    -> Client({post, <<"/devices/", Device/binary, "/updates">>, Params}).
-
-%% @doc Retrieve list of triggers associated with the specified device.
-%% https://m2x.att.com/developer/documentation/v2/device#List-Triggers
-triggers(Client, Device)                -> Client({get, <<"/devices/", Device/binary, "/triggers">>}).
-
-%% @doc Create a new trigger associated with the specified device.
-%% https://m2x.att.com/developer/documentation/v2/device#Create-Trigger
-create_trigger(Client, Device, Params)  -> Client({post, <<"/devices/", Device/binary, "/triggers">>, Params}).

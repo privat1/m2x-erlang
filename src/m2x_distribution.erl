@@ -8,8 +8,6 @@
 -export([devices/2                  ]).
 -export([           create_device/3 ]).
 -export([streams/2                  ]).
--export([triggers/2                 ]).
--export([           create_trigger/3]).
 
 %% @doc Get details of an existing distribution.
 %% https://m2x.att.com/developer/documentation/v2/distribution#View-Distribution-Details
@@ -34,11 +32,3 @@ create_device(Client, Dist, Params)  -> Client({post, <<"/distributions/", Dist/
 %% @doc Retrieve list of data streams associated with the specified distribution.
 %% https://m2x.att.com/developer/documentation/v2/distribution#List-Data-Streams
 streams(Client, Dist)                 -> Client({get, <<"/distributions/", Dist/binary, "/streams">>}).
-
-%% @doc Retrieve list of triggers associated with the specified distribution.
-%% https://m2x.att.com/developer/documentation/v2/distribution#List-Triggers
-triggers(Client, Dist)                -> Client({get, <<"/distributions/", Dist/binary, "/triggers">>}).
-
-%% @doc Create a new trigger associated with the specified distribution.
-%% https://m2x.att.com/developer/documentation/v2/distribution#Create-Trigger
-create_trigger(Client, Dist, Params)  -> Client({post, <<"/distributions/", Dist/binary, "/triggers">>, Params}).
