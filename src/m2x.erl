@@ -1,6 +1,6 @@
 
 -module(m2x).
--define(VERSION, <<"0.0.1">>).
+-define(VERSION, <<"1.0.0">>).
 -vsn(?VERSION).
 
 %% API
