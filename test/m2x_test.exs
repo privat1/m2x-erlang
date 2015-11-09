@@ -6,6 +6,8 @@ defmodule Test_m2x do
   for {func, arity, func_params, req_method, req_path, req_params} <- [
     { :devices,             "/1", :null,  :get,  "/devices",         :null  },
     { :devices,             "/2", params, :get,  "/devices",         params },
+    { :search_devices,      "/1", :null,  :get,  "/devices/search",  :null  },
+    { :search_devices,      "/2", params, :get,  "/devices/search",  params },
     { :devices_catalog,     "/1", :null,  :get,  "/devices/catalog", :null  },
     { :devices_catalog,     "/2", params, :get,  "/devices/catalog", params },
     { :devices_tags,        "/1", :null,  :get,  "/devices/tags",    :null  },

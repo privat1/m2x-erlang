@@ -1,12 +1,21 @@
 # m2x
 
 ### devices
-Retrieve the list of devices accessible by the authenticated API key that meet the search criteria.
-> [https://m2x.att.com/developer/documentation/v2/device#List-Search-Devices](https://m2x.att.com/developer/documentation/v2/device#List-Search-Devices)
+Retrieve the list of devices accessible by the authenticated API key.
+> [https://m2x.att.com/developer/documentation/v2/device#List-Devices](https://m2x.att.com/developer/documentation/v2/device#List-Devices)
 
 ```erlang
 m2x:devices(Client).
 m2x:devices(Client, Params).
+```
+
+### search_devices
+Retrieve the list of devices accessible by the authenticated API key that meet the search criteria.
+> [https://m2x.att.com/developer/documentation/v2/device#Search-Devices](https://m2x.att.com/developer/documentation/v2/device#Search-Devices)
+
+```erlang
+m2x:search_devices(Client).
+m2x:search_devices(Client, Params).
 ```
 
 ### devices_catalog

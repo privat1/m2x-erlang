@@ -8,6 +8,7 @@
 -export([client/1, client/2, client/3, client/4]).
 
 -export([devices/1,         devices/2            ]).
+-export([search_devices/1,  search_devices/2     ]).
 -export([devices_catalog/1, devices_catalog/2    ]).
 -export([devices_tags/1                          ]).
 -export([                   create_device/2      ]).
@@ -27,10 +28,15 @@ client(A, B)       -> m2x_client:create(A, B).
 client(A, B, C)    -> m2x_client:create(A, B, C).
 client(A, B, C, D) -> m2x_client:create(A, B, C, D).
 
-%% @doc Retrieve the list of devices accessible by the authenticated API key that meet the search criteria.
-%% https://m2x.att.com/developer/documentation/v2/device#List-Search-Devices
+%% @doc Retrieve the list of devices accessible by the authenticated API key.
+%% https://m2x.att.com/developer/documentation/v2/device#List-Devices
 devices(Client)                     -> Client({get, <<"/devices">>}).
 devices(Client, Params)             -> Client({get, <<"/devices">>, Params}).
+
+%% @doc Retrieve the list of devices accessible by the authenticated API key that meet the search criteria.
+%% https://m2x.att.com/developer/documentation/v2/device#Search-Devices
+search_devices(Client)              -> Client({get, <<"/devices/search">>}).
+search_devices(Client, Params)      -> Client({get, <<"/devices/search">>, Params}).
 
 %% @doc Search the catalog of public devices.
 %% https://m2x.att.com/developer/documentation/v2/device#List-Search-Public-Devices-Catalog
