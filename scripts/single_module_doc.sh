@@ -47,6 +47,7 @@ while read -r line; do
       current_funcs=$(echo "${current_funcs}" | sed 's/Device/<<"DEVICE-ID">>/')
       current_funcs=$(echo "${current_funcs}" | sed 's/Dist/<<"DISTRIBUTION-ID">>/')
       current_funcs=$(echo "${current_funcs}" | sed 's/Coll/<<"COLLECTION-ID">>/')
+      current_funcs=$(echo "${current_funcs}" | sed 's/Command/<<"COMMAND-ID">>/')
       current_funcs=$(echo "${current_funcs}" | sed 's/Key/<<"KEY-ID">>/')
       current_funcs=$(echo "${current_funcs}" | sed 's/Job/<<"JOB-ID">>/')
       current_funcs=$(echo "${current_funcs}" | sed 's/Stream/<<"STREAM-NAME">>/')
