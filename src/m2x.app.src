@@ -1,6 +1,6 @@
 
 {application, m2x, [
-  {vsn, "1.1.0"},
+  {vsn, "1.2.0"},
   {modules, [
     m2x,
     m2x_client,
