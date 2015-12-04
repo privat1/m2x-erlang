@@ -9,6 +9,7 @@
 -export([location/2                              ]).
 -export([                     update_location/3  ]).
 -export([streams/2                               ]).
+-export([commands/2                              ]).
 -export([values/2,            values/3           ]).
 -export([                     values_search/3    ]).
 -export([values_export_csv/2, values_export_csv/3]).
@@ -42,6 +43,10 @@ update_location(Client, Device, Params)   -> Client({put, <<"/devices/", Device/
 %% @doc Retrieve list of data streams associated with the specified device.
 %% https://m2x.att.com/developer/documentation/v2/device#List-Data-Streams
 streams(Client, Device)                   -> Client({get, <<"/devices/", Device/binary, "/streams">>}).
+
+%% @doc Retrieve list of recent commands sent to the specified device.
+%% https://m2x.att.com/developer/documentation/v2/device#Device-s-List-of-Received-Commands
+commands(Client, Device)                  -> Client({get, <<"/devices/", Device/binary, "/commands">>}).
 
 %% @doc List values from all data streams associated with a specific device.
 %% https://m2x.att.com/developer/documentation/v2/device#List-Values-from-all-Data-Streams-of-a-Device

@@ -56,6 +56,14 @@ Retrieve list of data streams associated with the specified device.
 m2x_device:streams(Client, <<"DEVICE-ID">>).
 ```
 
+### commands
+Retrieve list of recent commands sent to the specified device.
+> [https://m2x.att.com/developer/documentation/v2/device#Device-s-List-of-Received-Commands](https://m2x.att.com/developer/documentation/v2/device#Device-s-List-of-Received-Commands)
+
+```erlang
+m2x_device:commands(Client, <<"DEVICE-ID">>).
+```
+
 ### values
 List values from all data streams associated with a specific device.
 > [https://m2x.att.com/developer/documentation/v2/device#List-Values-from-all-Data-Streams-of-a-Device](https://m2x.att.com/developer/documentation/v2/device#List-Values-from-all-Data-Streams-of-a-Device)

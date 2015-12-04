@@ -12,6 +12,7 @@ defmodule Test_m2x_device do
     { :location,          "/2", :null,  :get,    "/devices/"<>device<>"/location",          :null  },
     { :update_location,   "/3", params, :put,    "/devices/"<>device<>"/location",          params },
     { :streams,           "/2", :null,  :get,    "/devices/"<>device<>"/streams",           :null  },
+    { :commands,          "/2", :null,  :get,    "/devices/"<>device<>"/commands",          :null  },
     { :values,            "/2", :null,  :get,    "/devices/"<>device<>"/values",            :null  },
     { :values,            "/3", params, :get,    "/devices/"<>device<>"/values",            params },
     { :values_search,     "/3", params, :get,    "/devices/"<>device<>"/values/search",     params },
