@@ -43,6 +43,23 @@ Create a new device.
 m2x:create_device(Client, Params).
 ```
 
+### commands
+Retrieve the list of recent commands sent by the current user.
+> [https://m2x.att.com/developer/documentation/v2/commands#List-Sent-Commands](https://m2x.att.com/developer/documentation/v2/commands#List-Sent-Commands)
+
+```erlang
+m2x:commands(Client).
+m2x:commands(Client, Params).
+```
+
+### send_command
+Send a command with the given name to one or more targets.
+> [https://m2x.att.com/developer/documentation/v2/commands#Send-Command](https://m2x.att.com/developer/documentation/v2/commands#Send-Command)
+
+```erlang
+m2x:send_command(Client, Params).
+```
+
 ### distributions
 Retrieve list of device distributions accessible by the authenticated API key.
 > [https://m2x.att.com/developer/documentation/v2/distribution#List-Distributions](https://m2x.att.com/developer/documentation/v2/distribution#List-Distributions)

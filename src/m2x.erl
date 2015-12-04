@@ -12,6 +12,8 @@
 -export([devices_catalog/1, devices_catalog/2    ]).
 -export([devices_tags/1                          ]).
 -export([                   create_device/2      ]).
+-export([commands/1,        commands/2           ]).
+-export([                   send_command/2       ]).
 -export([distributions/1                         ]).
 -export([                   create_distribution/2]).
 -export([collections/1                           ]).
@@ -50,6 +52,15 @@ devices_tags(Client)                -> Client({get, <<"/devices/tags">>}).
 %% @doc Create a new device.
 %% https://m2x.att.com/developer/documentation/v2/device#Create-Device
 create_device(Client, Params)       -> Client({post, <<"/devices">>, Params}).
+
+%% @doc Retrieve the list of recent commands sent by the current user.
+%% https://m2x.att.com/developer/documentation/v2/commands#List-Sent-Commands
+commands(Client)                    -> Client({get, <<"/commands">>}).
+commands(Client, Params)            -> Client({get, <<"/commands">>, Params}).
+
+%% @doc Send a command with the given name to one or more targets.
+%% https://m2x.att.com/developer/documentation/v2/commands#Send-Command
+send_command(Client, Params)        -> Client({post, <<"/commands">>, Params}).
 
 %% @doc Retrieve list of device distributions accessible by the authenticated API key.
 %% https://m2x.att.com/developer/documentation/v2/distribution#List-Distributions

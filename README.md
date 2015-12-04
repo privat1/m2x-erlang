@@ -64,6 +64,7 @@ To avoid using API endpoints directly, the `Client` function can instead be pass
 - **m2x_key** - [Module documentation](doc/m2x_key.md) - [Module source](src/m2x_key.erl) - [Web API documentation](https://m2x.att.com/developer/documentation/v2/keys)
 - **m2x_device** - [Module documentation](doc/m2x_device.md) - [Module source](src/m2x_device.erl) - [Web API documentation](https://m2x.att.com/developer/documentation/v2/device)
 - **m2x_stream** - [Module documentation](doc/m2x_stream.md) - [Module source](src/m2x_stream.erl) - [Web API documentation](https://m2x.att.com/developer/documentation/v2/device)
+- **m2x_command** - [Module documentation](doc/m2x_command.md) - [Module source](src/m2x_command.erl) - [Web API documentation](https://m2x.att.com/developer/documentation/v2/commands)
 - **m2x_distribution** - [Module documentation](doc/m2x_distribution.md) - [Module source](src/m2x_distribution.erl) - [Web API documentation](https://m2x.att.com/developer/documentation/v2/distribution)
 - **m2x_distribution_stream** - [Module documentation](doc/m2x_distribution_stream.md) - [Module source](src/m2x_distribution_stream.erl) - [Web API documentation](https://m2x.att.com/developer/documentation/v2/distribution)
 - **m2x_collection** - [Module documentation](doc/m2x_collection.md) - [Module source](src/m2x_collection.erl) - [Web API documentation](https://m2x.att.com/developer/documentation/v2/collections)
