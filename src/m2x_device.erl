@@ -7,6 +7,8 @@
 -export([delete/2                                ]).
 -export([log/2                                   ]).
 -export([location/2                              ]).
+-export([location_history/2                      ]).
+-export([                     location_history/3 ]).
 -export([                     update_location/3  ]).
 -export([streams/2                               ]).
 -export([commands/2                              ]).
@@ -35,6 +37,11 @@ log(Client, Device)                       -> Client({get, <<"/devices/", Device/
 %% @doc Get location details of an existing device.
 %% https://m2x.att.com/developer/documentation/v2/device#Read-Device-Location
 location(Client, Device)                  -> Client({get, <<"/devices/", Device/binary, "/location">>}).
+
+%% @doc Get location history details of an existing device.
+%% https://m2x.att.com/developer/documentation/v2/device#Read-Device-Location-History
+location_history(Client, Device)          -> Client({get, <<"/devices/", Device/binary, "/location/waypoints">>}).
+location_history(Client, Device, Params)  -> Client({get, <<"/devices/", Device/binary, "/location/waypoints">>, Params}).
 
 %% @doc Update the current location of the specified device.
 %% https://m2x.att.com/developer/documentation/v2/device#Update-Device-Location

@@ -40,6 +40,15 @@ Get location details of an existing device.
 m2x_device:location(Client, <<"DEVICE-ID">>).
 ```
 
+### location_history
+Get location history details of an existing device.
+> [https://m2x.att.com/developer/documentation/v2/device#Read-Device-Location-History](https://m2x.att.com/developer/documentation/v2/device#Read-Device-Location-History)
+
+```erlang
+m2x_device:location_history(Client, <<"DEVICE-ID">>).
+m2x_device:location_history(Client, <<"DEVICE-ID">>, Params).
+```
+
 ### update_location
 Update the current location of the specified device.
 > [https://m2x.att.com/developer/documentation/v2/device#Update-Device-Location](https://m2x.att.com/developer/documentation/v2/device#Update-Device-Location)
