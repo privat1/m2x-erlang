@@ -1,7 +1,7 @@
 defmodule M2X.Mixfile do
   use Mix.Project
 
-  def version, do: "1.2.0" # Version number must also be updated in both git m2x.erl and m2x.app.src
+  def version, do: "1.3.0" # Version number must also be updated in both git m2x.erl and m2x.app.src
 
   def project do
     [ app:         :m2x_erlang,
