@@ -57,6 +57,38 @@ Update the current location of the specified device.
 m2x_device:update_location(Client, <<"DEVICE-ID">>, Params).
 ```
 
+### metadata
+Get the custom metadata of the specified device.
+> [https://m2x.att.com/developer/documentation/v2/device#Read-Device-Metadata](https://m2x.att.com/developer/documentation/v2/device#Read-Device-Metadata)
+
+```erlang
+m2x_device:metadata(Client, <<"DEVICE-ID">>).
+```
+
+### update_metadata
+Update the custom metadata of the specified device.
+> [https://m2x.att.com/developer/documentation/v2/device#Update-Device-Metadata](https://m2x.att.com/developer/documentation/v2/device#Update-Device-Metadata)
+
+```erlang
+m2x_device:update_metadata(Client, <<"DEVICE-ID">>, Params).
+```
+
+### get_metadata_field
+Get the value of a single field of the custom metadata.
+> [https://m2x.att.com/developer/documentation/v2/device#Read-Device-Metadata-Field](https://m2x.att.com/developer/documentation/v2/device#Read-Device-Metadata-Field)
+
+```erlang
+m2x_device:get_metadata_field(Client, <<"DEVICE-ID">>, K).
+```
+
+### set_metadata_field
+Update the value of a single field of the custom metadata.
+> [https://m2x.att.com/developer/documentation/v2/device#Update-Device-Metadata-Field](https://m2x.att.com/developer/documentation/v2/device#Update-Device-Metadata-Field)
+
+```erlang
+m2x_device:set_metadata_field(Client, <<"DEVICE-ID">>, K, V).
+```
+
 ### streams
 Retrieve list of data streams associated with the specified device.
 > [https://m2x.att.com/developer/documentation/v2/device#List-Data-Streams](https://m2x.att.com/developer/documentation/v2/device#List-Data-Streams)
