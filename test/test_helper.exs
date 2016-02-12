@@ -84,7 +84,7 @@ defmodule MockEngine do
       req_body:    to_json(req_params),
       res_status:  res_status,
       res_body:    to_json(res_params),
-      res_headers: res_params==:null && [] || [{"Content-Type", "application/json"}]
+      res_headers: res_params==:null && [] || [{"Content-Type", "application/json; charset=UTF-8"}]
     }}
   end
 

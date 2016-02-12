@@ -60,8 +60,8 @@ request({ApiKey, ApiBase, ApiVersion, HttpEngine}, {Method, Path, Params, Header
 make_response({ok, Status, Headers, BodyRef}, HttpEngine, UseRaw) ->
   {ok, Body} = HttpEngine:body(BodyRef),
   Json = case proplists:get_value(<<"Content-Type">>, Headers) of
-           <<"application/json">> -> jsx:decode(Body);
-           _                      -> null
+           <<"application/json", _/binary>> -> jsx:decode(Body);
+           _                                -> null
          end,
   IsOk = case Status div 100 of
            2 -> ok;
